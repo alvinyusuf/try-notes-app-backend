@@ -1,16 +1,16 @@
-const Hapi = require('@hapi/hapi');
-const notes = require('./api/notes');
-const NotesService = require('./services/inMemory/NotesService');
+const Hapi = require("@hapi/hapi");
+const notes = require("./api/notes");
+const NotesService = require("./services/inMemory/NotesService");
 
 const init = async () => {
   const noteService = new NotesService();
 
   const server = Hapi.server({
-    port: 5000,
-    host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
+    port: 5500,
+    host: process.env.NODE_ENV !== "production" ? "localhost" : "0.0.0.0",
     routes: {
       cors: {
-        origin: ['*'],
+        origin: ["*"],
       },
     },
   });
